@@ -1,6 +1,6 @@
 
 $(function () {
-    $('a[data-role=button]').each(function ({
+    $('a[data-role=button]').each(function {
 	$(this).click(function () {
 	    console.log($(this).id());
 	    var name = $(this).id().split('_')[0];
