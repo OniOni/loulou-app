@@ -2,7 +2,10 @@ from flask import Flask, jsonify, render_template, url_for
 app = Flask(__name__)
 
 import redis
-r = redis.StrictRedis(host='localhost', port=6379, db=0)
+import os
+
+redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+r = redis.from_url(redis_url)
 
 @app.route("/app")
 def main():    
