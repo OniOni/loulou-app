@@ -17,7 +17,7 @@ def main():
 
 def add_one(value):
     now = time.time()
-    r.rpush(value, now)
+    r.lpush(value, now)
     return jsonify(**{'result': 'OK', value: r.llen(value)})
 
 @app.route("/pipi")
@@ -27,6 +27,10 @@ def pipi():
 @app.route("/caca")
 def caca():
     return add_one('caca')
+
+@app.route("/<obj>/info")
+def info(obj):
+    return jsonify(times=[int(t.split('.')[0]) for t in r.lrange(obj, 0, 9)])
 
 @app.route("/status")
 def status():
