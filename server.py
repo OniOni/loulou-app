@@ -30,7 +30,7 @@ def caca():
 
 @app.route("/<obj>/info")
 def info(obj):
-    return jsonify(times=[int(t.split('.')[0]) for t in r.lrange(obj, 0, 9)])
+    return jsonify(times=[int(float(t) * 1000) for t in r.lrange(obj, 0, 9)])
 
 @app.route("/status")
 def status():
