@@ -22,7 +22,13 @@ $(function () {
         console.log(data);
 
         for(var i = 0; i < data['times'].length; i++) {
-          list.append('<li class="ui-body-inherit ui-li-static">'+data['times'][i]+"</li>")
+          var d = new Date(data['times'][i]);
+          console.log(d);
+          var str = d.getDate()+"/"+d.getMonth() + 1+"/"+d.getFullYear();
+          str += " at "+d.getHours()+":";
+          var m = d.getMinutes();
+          str += m >= 10 ? m : '0'+m;
+          list.append('<li class="ui-body-inherit ui-li-static">'+str+"</li>")
         }
       })
 
