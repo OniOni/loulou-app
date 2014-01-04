@@ -9,13 +9,21 @@
 
     <div data-role="page">
       <div data-role="header">
-        <h1>Caca</h1>
+        <h1>Loulou app</h1>
       </div><!-- /header -->
 
       <div data-role="content">
-        <p>There are <span id="caca">{{ caca }}</span> caca's and <span id="pipi">{{ pipi }}</span> pipi's</p>
-        <a id="caca_button" data-role="button">caca</a>
-        <a id="pipi_button" data-role="button">pipi</a>
+
+        <h2>Log<h2>
+        <button id="caca_button" class="ui-btn ui-icon-plus ui-btn-icon-right">caca</button>
+        <button id="pipi_button" class="ui-btn ui-icon-plus ui-btn-icon-right">pipi</button>
+
+        <h2>Information</h2>
+        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow"data-role="listview">
+          <li class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-first-child">Caca <span id="caca" class="ui-li-count ui-body-inherit">{{ caca }}</span></li>
+          <li class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-last-child">Pipi <span id="pipi" class="ui-li-count ui-body-inherit">{{ pipi }}</span></li>
+        </ul>
+
       </div><!-- /content -->
 
     </div><!-- /page -->
