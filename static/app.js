@@ -21,6 +21,7 @@ $(function () {
         var list = $('#info-list');
         console.log(data);
 
+        list.empty();
         for(var i = 0; i < data['times'].length; i++) {
           var d = new Date(data['times'][i]);
           console.log(d);
