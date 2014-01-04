@@ -7,7 +7,7 @@
   </head>
   <body>
 
-    <div data-role="page">
+    <div data-role="page" id="index">
       <div data-role="header">
         <h1>Loulou app</h1>
       </div><!-- /header -->
@@ -15,18 +15,28 @@
       <div data-role="content">
 
         <h2>Log<h2>
-        <button id="caca_button" class="ui-btn ui-icon-plus ui-btn-icon-right">caca</button>
-        <button id="pipi_button" class="ui-btn ui-icon-plus ui-btn-icon-right">pipi</button>
+        <button id="caca_button" data-role="incr" class="ui-btn ui-icon-plus ui-btn-icon-right">caca</button>
+        <button id="pipi_button" data-role="incr" class="ui-btn ui-icon-plus ui-btn-icon-right">pipi</button>
 
         <h2>Information</h2>
         <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow"data-role="listview">
-          <li class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-first-child">Caca <span id="caca" class="ui-li-count ui-body-inherit">{{ caca }}</span></li>
-          <li class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-last-child">Pipi <span id="pipi" class="ui-li-count ui-body-inherit">{{ pipi }}</span></li>
+          <li data-role="nav" data-dest="caca" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-first-child">Caca <span id="caca" class="ui-li-count ui-body-inherit">{{ caca }}</span></li>
+          <li data-role="nav" data-dest="pipi" class="ui-btn ui-btn-icon-right ui-icon-carat-r ui-body-inherit ui-li-has-count ui-last-child">Pipi <span id="pipi" class="ui-li-count ui-body-inherit">{{ pipi }}</span></li>
         </ul>
 
       </div><!-- /content -->
 
     </div><!-- /page -->
+
+    <div data-role="page" id="list">
+      <div data-role="header">
+        <h1>Title</h1>
+      </div>
+      <div data-role="content">
+        <ul id="info-list" class="ui-listview" data-role="listview">
+        </ul>
+      </div>
+    </div>
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" src="/static/app.js"></script>
