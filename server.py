@@ -20,13 +20,9 @@ def add_one(value):
     r.lpush(value, now)
     return jsonify(**{'result': 'OK', value: r.llen(value)})
 
-@app.route("/pipi")
-def pipi():
-    return add_one('pipi')
-
-@app.route("/caca")
-def caca():
-    return add_one('caca')
+@app.route("/<obj>/incr")
+def incr(obj):
+    return add_one(obj)
 
 @app.route("/<obj>/info")
 def info(obj):
