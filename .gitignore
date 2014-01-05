@@ -1,6 +1,13 @@
+# python
 *.pyc
+
+# emacs
 *.*~
 \#*
 .\#*
 
-venv
+# virtualenv
+venv*
+
+# redis
+*.rdb
